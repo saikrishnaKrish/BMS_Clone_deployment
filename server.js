@@ -1,8 +1,6 @@
 const express = require('express');
-const serverless = require('serverless-http');
 require('dotenv').config();
 
-const router = express.Router();
 const app = express();
 const dbConfig = require('./DBConfig/dbconfig');
 const userRoutes = require('./routes/userRoutes');
@@ -24,9 +22,6 @@ app.use('/api/shows',showRoutes.router);
 app.use('/api/bookings',bookingRoutes.router);
 
 // Use 3000 as a default if PORT is not defined
-// const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-// app.listen(port, () => console.log(`Connected to server on port ${port}`));
-app.use('/.netlify/server', router);  // path must route to lambda
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(port, () => console.log(`Connected to server on port ${port}`));
