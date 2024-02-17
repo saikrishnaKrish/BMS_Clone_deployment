@@ -1,4 +1,5 @@
 const express = require('express');
+const serverless = require('serverless-http');
 require('dotenv').config();
 
 const app = express();
@@ -22,6 +23,9 @@ app.use('/api/shows',showRoutes.router);
 app.use('/api/bookings',bookingRoutes.router);
 
 // Use 3000 as a default if PORT is not defined
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
-app.listen(port, () => console.log(`Connected to server on port ${port}`));
+// app.listen(port, () => console.log(`Connected to server on port ${port}`));
+
+module.exports = app;
+module.exports.handler = serverless(app);
