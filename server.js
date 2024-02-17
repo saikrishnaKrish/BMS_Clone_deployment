@@ -2,6 +2,7 @@ const express = require('express');
 const serverless = require('serverless-http');
 require('dotenv').config();
 
+const router = express.Router();
 const app = express();
 const dbConfig = require('./DBConfig/dbconfig');
 const userRoutes = require('./routes/userRoutes');
