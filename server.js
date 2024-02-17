@@ -9,7 +9,7 @@ const theatreRoutes = require('./routes/theatreRoute');
 const showRoutes = require('./routes/showRoutes');
 const bookingRoutes = require('./routes/bookingRoute');
 
-app.use(express.static('build'));
+app.use(express.static('public'));
 
 // Middlewares
 app.use(express.json());
