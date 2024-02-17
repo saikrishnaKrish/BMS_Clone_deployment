@@ -26,6 +26,6 @@ app.use('/api/bookings',bookingRoutes.router);
 // const port = process.env.PORT || 3000;
 
 // app.listen(port, () => console.log(`Connected to server on port ${port}`));
-
+app.use('/.netlify/server', router);  // path must route to lambda
 module.exports = app;
 module.exports.handler = serverless(app);
