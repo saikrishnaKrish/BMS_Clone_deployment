@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 require('dotenv').config();
 
@@ -25,3 +26,6 @@ app.use('/api/bookings',bookingRoutes.router);
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Connected to server on port ${port}`));
+=======
+console.log("hi sai")￼Enter
+>>>>>>> 78be762e28704d4c2e4760cd584676731f630054
